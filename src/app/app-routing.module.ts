@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+// import { AdminComponent } from './admin/admin.component';
+import { FedTreasuryComponent } from './fed-treasury/fed-treasury.component';
 
-
+const routes: Routes = [
+  {path: "fedTreasury", component: FedTreasuryComponent} // fedTreasury might need to be goldReserves?
+  // {path: "admin", component: AdminComponent}
+];
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
-  ]
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy'})
+  ],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

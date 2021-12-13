@@ -9,15 +9,14 @@ import { FedTreasuryService } from '../fed-treasury.service';
 })
 export class FedTreasuryComponent implements OnInit {
 
-  goldReserves: Reserve[] = [1]
+  goldReserves: Reserve[] = [];
   
-  constructor() {private fedTreasuryService: FedTreasuryService}
+  constructor(private fedTreasuryService: FedTreasuryService) {}
 
   ngOnInit(): void {
-    this.FedTreasuryService.getGoldReserve().subscribe(payload => {
+    this.fedTreasuryService.getGoldReserve().subscribe(payload => {
       this.goldReserves = payload;
     })
   }
 
 }
-
