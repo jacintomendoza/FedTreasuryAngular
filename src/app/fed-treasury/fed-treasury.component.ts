@@ -15,7 +15,8 @@ export class FedTreasuryComponent implements OnInit {
 
   ngOnInit(): void {
     this.fedTreasuryService.getGoldReserve().subscribe(payload => {
-      this.goldReserves = payload;
+      // console.log("reserves are", payload.data)
+      this.goldReserves = payload.data;
     })
   }
 
